@@ -3,7 +3,6 @@ package com.example.projectbibleapp;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,41 +14,40 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.viewHolder> {
+public class ChaptersAdapter extends RecyclerView.Adapter<ChaptersAdapter.viewHolder> {
     Context context;
-    ArrayList<Model_books>books;
+    ArrayList<ChapterModel>chapterSize;
 
-    public BooksAdapter(Context context, ArrayList<Model_books> books) {
+    public ChaptersAdapter(Context context, ArrayList<ChapterModel> chapterSize) {
         this.context = context;
-        this.books = books;
+        this.chapterSize = chapterSize;
     }
+
 
     @NonNull
     @Override
     public viewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater=LayoutInflater.from(parent.getContext());
-        final View view=inflater.inflate(R.layout.bible_book_item,parent,false);
+        View view=inflater.inflate(R.layout.bible_book_item,parent,false);
 
-
-        return new viewHolder(view);
-
+        return new ChaptersAdapter.viewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull final viewHolder holder, int position) {
-        final Model_books model_books=books.get(position);
-        holder.books.setText(model_books.getBooks());
-        holder.books.setTextColor(model_books.getColor());
+        final ChapterModel chapterModel=chapterSize.get(position);
+        holder.button.setText( Integer.toString(chapterModel.getChapter()));
 
 
-        holder.books.setOnClickListener(new View.OnClickListener() {
+
+        holder.button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Intent intent=new Intent(context,Chapters.class);
+                Intent intent=new Intent(v.getContext(),Verses.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                intent.putExtra("the_book",model_books.getBooks());
-                context.startActivity(intent);
+                intent.putExtra("chapter_number",chapterModel.getChapter());
+                v.getContext().startActivity(intent);
             }
         });
 
@@ -57,15 +55,15 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.viewHolder> 
 
     @Override
     public int getItemCount() {
-        return books.size();
+        return chapterSize.size();
     }
 
-    class viewHolder extends RecyclerView.ViewHolder{
+    public class viewHolder extends RecyclerView.ViewHolder{
 
-        Button books;
+        Button button;
         public viewHolder(@NonNull View itemView) {
             super(itemView);
-            books=itemView.findViewById(R.id.book);
+            button=itemView.findViewById(R.id.book);
         }
     }
 }

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="2dp"
+    android:orientation="horizontal"
+    android:id="@+id/the_verse_layout">
+
+
+
+    <TextView
+        android:id="@+id/verse_number"
+        android:layout_width="wrap_content"
+        android:textSize="14sp"
+        android:padding="3dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-black"
+        android:text="1" />
+
+    <TextView
+        android:id="@+id/text_verse"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textSize="18sp"
+        android:text="TextView" />
+
+</LinearLayout>
