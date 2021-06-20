@@ -1,2 +1,3 @@
 # The-bible
-![Screenshot_20210620-112238](https://user-images.githubusercontent.com/59538986/122667385-56c87780-d1bb-11eb-833d-bed269ef1ea0.png)
+![Screenshot_20210620-112430](https://user-images.githubusercontent.com/59538986/122668387-7ca44b00-d1c0-11eb-934f-fd385ebcbe5f.png)
+
