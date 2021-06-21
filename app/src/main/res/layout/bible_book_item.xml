@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_weight="1">
 
     <Button
         android:id="@+id/book"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:padding="6dp"
+        android:background="@drawable/buttons"
+        android:layout_height="match_parent"
+        android:layout_gravity="fill_horizontal"
         android:layout_weight="1"
-        android:text="Button" />
+        android:layout_margin="6dp"
+        android:fontFamily="sans-serif-light"
+        android:text="Button"
+        android:textColor="@color/text_color"
+         />
 </LinearLayout>
